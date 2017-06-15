@@ -6,12 +6,13 @@ describe GildedRose do
   let(:gilded_rose) { GildedRose.new(items) }
   let(:brie) { Item.new("Aged Brie", 2, 0)}
   let(:sulfuras) { Item.new("Sulfuras, Hand of Ragnaros", 1, 5)}
+  let(:pass) { Item.new("Backstage passes to a TAFKAL80ETC concert", 11, 1)}
 
 
 
   describe "#update_quality" do
     before :each do
-      items.push(item, brie, sulfuras)
+      items.push(item, brie, sulfuras, pass)
       gilded_rose.update_quality
     end
 
@@ -50,6 +51,13 @@ describe GildedRose do
       it 'cannot degrade in quality' do
         expect(items[2].name).to eq "Sulfuras, Hand of Ragnaros"
         expect(items[2].quality).to eq 5
+      end
+    end
+
+    context 'backstage passes' do
+      it 'increases in quality by 2 with =< 10 days before concert' do
+        expect(items[3].name).to eq "Backstage passes to a TAFKAL80ETC concert"
+        expect(items[3].quality).to eq 2
       end
     end
 
