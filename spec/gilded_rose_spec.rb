@@ -70,6 +70,12 @@ describe GildedRose do
         expect(items[3].sell_in).to eq 5
         expect(items[3].quality).to eq 12
       end
+
+      it 'has 0 quality after concert' do
+        11.times { gilded_rose.update_quality }
+        expect(items[3].sell_in).to eq -1
+        expect(items[3].quality).to eq 0
+      end
     end
 
   end
