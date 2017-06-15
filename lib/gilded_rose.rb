@@ -8,6 +8,10 @@ class GildedRose
   end
 
   def update_quality(item)
+    decrease_sell_in(item)
+  end
+
+  def decrease_sell_in(item)
     item.sell_in -= 1
   end
 end
