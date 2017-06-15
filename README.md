@@ -40,6 +40,9 @@ bundle install
 rspec
 ```
 
+## Diagram
+<a href="http://imgur.com/YF2GD7r"><img src="http://i.imgur.com/YF2GD7r.png" title="Gilded Rose Diagram" /></a>
+
 ---
 ## Processes
 * TDD
