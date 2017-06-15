@@ -1,7 +1,7 @@
 require 'item'
 
 describe 'item' do
-  item = Item.new("pen", 2, 2)
+  let(:item) { Item.new("pen", 2, 2) }
 
   it 'item can be created with a name' do
     expect(item.name).to eq("pen")
