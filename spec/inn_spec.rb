@@ -21,6 +21,10 @@ describe Inn do
       gilded_rose.update_quality(item)
     end
 
+    it 'responds to the method update_quality' do
+      expect(gilded_rose).to respond_to(:update_quality)
+    end
+
     # it "does not change the name" do
     #   expect(items[0].name).to eq "foo"
     # end

@@ -5,8 +5,8 @@ class Inn
   end
 
   def update_quality(products)
-    @products.each do | item |
-      item.update_quality(self)
-    end
+    # @products.each do | item |
+    #   item.update_quality(self)
+    # end
   end
 end
