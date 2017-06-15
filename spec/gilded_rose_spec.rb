@@ -27,5 +27,10 @@ describe GildedRose do
        expect(items[0].quality).to eq 2
     end
 
+    it 'cannot have a negative quality' do
+      4.times { gilded_rose.update_quality }
+      expect(items[0].quality).to eq 0
+    end
+
   end
 end
