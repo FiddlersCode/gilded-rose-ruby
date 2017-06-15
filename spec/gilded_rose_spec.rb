@@ -5,12 +5,13 @@ describe GildedRose do
   let(:items) { [] }
   let(:gilded_rose) { GildedRose.new(items) }
   let(:brie) { Item.new("Aged Brie", 2, 0)}
+  let(:sulfuras) { Item.new("Sulfuras, Hand of Ragnaros", 1, 5)}
 
 
 
   describe "#update_quality" do
     before :each do
-      items.push(item, brie)
+      items.push(item, brie, sulfuras)
       gilded_rose.update_quality
     end
 
@@ -43,7 +44,13 @@ describe GildedRose do
         expect(items[1].name).to eq "Aged Brie"
         expect(items[1].quality).to eq 1
       end
+    end
 
+    context 'sulfuras' do
+      it 'cannot degrade in quality' do
+        expect(items[2].name).to eq "Sulfuras, Hand of Ragnaros"
+        expect(items[2].quality).to eq 5
+      end
     end
 
   end
