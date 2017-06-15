@@ -52,13 +52,6 @@ describe Inn do
     #   50.times { gilded_rose.update_quality }
     #   expect(items[1].quality).to eq 50
     # end
-
-    # context 'aged brie' do
-    #   it 'aged brie increases in quality with age' do
-    #     expect(items[1].name).to eq "Aged Brie"
-    #     expect(items[1].quality).to eq 1
-    #   end
-    # end
     #
     # context 'sulfuras' do
     #   it 'cannot degrade in quality' do
