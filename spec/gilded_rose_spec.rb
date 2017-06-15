@@ -4,6 +4,7 @@ describe GildedRose do
   let(:item) { Item.new("foo", 2, 6)}
   let(:items) { [] }
   let(:gilded_rose) { GildedRose.new(items) }
+  let(:brie) { Item.new("Aged Brie", 2, 0)}
 
 
 
@@ -30,6 +31,16 @@ describe GildedRose do
     it 'cannot have a negative quality' do
       4.times { gilded_rose.update_quality }
       expect(items[0].quality).to eq 0
+    end
+
+    context 'aged brie' do
+      it 'aged brie increases in quality with age' do
+        items << brie
+        gilded_rose.update_quality
+        expect(items[1].name).to eq "Aged Brie"
+        expect(items[1].quality).to eq 1
+      end
+
     end
 
   end
