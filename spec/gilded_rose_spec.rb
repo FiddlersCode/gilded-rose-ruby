@@ -65,7 +65,7 @@ describe GildedRose do
         expect(items[3].quality).to eq 4
       end
 
-      it 'increases in quality by 3 with <= days before concert' do
+      it 'increases in quality by 3 with <= 5 days before concert' do
         5.times { gilded_rose.update_quality }
         expect(items[3].sell_in).to eq 5
         expect(items[3].quality).to eq 12
