@@ -2,5 +2,5 @@
 source "https://rubygems.org"
 
 gem 'rspec'
-gem 'simplecov', :require => false, :group => :test
+gem 'simplecov', :require => true, :group => :test
 gem 'rubocop'

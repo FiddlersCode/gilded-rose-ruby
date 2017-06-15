@@ -3,6 +3,7 @@ require 'backstage_pass'
 require 'aged_brie'
 require 'item'
 require 'sulfura'
+require 'simplecov'
 
 describe Inn do
   let(:item) { Item.new("foo", 2, 6)}
