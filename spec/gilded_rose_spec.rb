@@ -13,7 +13,7 @@ describe GildedRose do
   describe "#update_quality" do
     before :each do
       items.push(item, brie, sulfuras, pass)
-      gilded_rose.update_quality
+      gilded_rose.update_quality(item)
     end
 
     it "does not change the name" do
@@ -21,62 +21,62 @@ describe GildedRose do
     end
 
     it 'decreases sell_in by 1' do
-      2.times { gilded_rose.update_quality }
+      2.times { gilded_rose.update_quality(item) }
       expect(items[0].sell_in).to eq -1
     end
+    #
+    # it 'quality degrades twice as fast after sell_in < 0' do
+    #    2.times { gilded_rose.update_quality }
+    #    expect(items[0].quality).to eq 2
+    # end
+    #
+    # it 'cannot have a negative quality' do
+    #   4.times { gilded_rose.update_quality }
+    #   expect(items[0].quality).to eq 0
+    # end
+    #
+    # it 'cannot have a quality higher than 50' do
+    #   50.times { gilded_rose.update_quality }
+    #   expect(items[1].quality).to eq 50
+    # end
 
-    it 'quality degrades twice as fast after sell_in < 0' do
-       2.times { gilded_rose.update_quality }
-       expect(items[0].quality).to eq 2
-    end
-
-    it 'cannot have a negative quality' do
-      4.times { gilded_rose.update_quality }
-      expect(items[0].quality).to eq 0
-    end
-
-    it 'cannot have a quality higher than 50' do
-      50.times { gilded_rose.update_quality }
-      expect(items[1].quality).to eq 50
-    end
-
-    context 'aged brie' do
-      it 'aged brie increases in quality with age' do
-        expect(items[1].name).to eq "Aged Brie"
-        expect(items[1].quality).to eq 1
-      end
-    end
-
-    context 'sulfuras' do
-      it 'cannot degrade in quality' do
-        expect(items[2].name).to eq "Sulfuras, Hand of Ragnaros"
-        expect(items[2].quality).to eq 5
-      end
-    end
-
-    context 'backstage passes' do
-      it 'increases in quality by 1 with >10 days before concert' do
-        expect(items[3].name).to eq "Backstage passes to a TAFKAL80ETC concert"
-        expect(items[3].quality).to eq 2
-      end
-
-      it 'increases in quality by 2 with <= 10 days before concert' do
-        gilded_rose.update_quality
-        expect(items[3].quality).to eq 4
-      end
-
-      it 'increases in quality by 3 with <= 5 days before concert' do
-        5.times { gilded_rose.update_quality }
-        expect(items[3].sell_in).to eq 5
-        expect(items[3].quality).to eq 12
-      end
-
-      it 'has 0 quality after concert' do
-        11.times { gilded_rose.update_quality }
-        expect(items[3].sell_in).to eq -1
-        expect(items[3].quality).to eq 0
-      end
-    end
+    # context 'aged brie' do
+    #   it 'aged brie increases in quality with age' do
+    #     expect(items[1].name).to eq "Aged Brie"
+    #     expect(items[1].quality).to eq 1
+    #   end
+    # end
+    #
+    # context 'sulfuras' do
+    #   it 'cannot degrade in quality' do
+    #     expect(items[2].name).to eq "Sulfuras, Hand of Ragnaros"
+    #     expect(items[2].quality).to eq 5
+    #   end
+    # end
+    #
+    # context 'backstage passes' do
+    #   it 'increases in quality by 1 with >10 days before concert' do
+    #     expect(items[3].name).to eq "Backstage passes to a TAFKAL80ETC concert"
+    #     expect(items[3].quality).to eq 2
+    #   end
+    #
+    #   it 'increases in quality by 2 with <= 10 days before concert' do
+    #     gilded_rose.update_quality
+    #     expect(items[3].quality).to eq 4
+    #   end
+    #
+    #   it 'increases in quality by 3 with <= 5 days before concert' do
+    #     5.times { gilded_rose.update_quality }
+    #     expect(items[3].sell_in).to eq 5
+    #     expect(items[3].quality).to eq 12
+    #   end
+    #
+    #   it 'has 0 quality after concert' do
+    #     11.times { gilded_rose.update_quality }
+    #     expect(items[3].sell_in).to eq -1
+    #     expect(items[3].quality).to eq 0
+    #   end
+    # end
 
   end
 end
