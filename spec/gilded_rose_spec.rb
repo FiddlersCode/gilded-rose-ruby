@@ -55,9 +55,14 @@ describe GildedRose do
     end
 
     context 'backstage passes' do
-      it 'increases in quality by 2 with =< 10 days before concert' do
+      it 'increases in quality by 1 with >10 days before concert' do
         expect(items[3].name).to eq "Backstage passes to a TAFKAL80ETC concert"
         expect(items[3].quality).to eq 2
+      end
+
+      it 'increases in quality by 2 with =< 10 days before concert' do
+        gilded_rose.update_quality
+        expect(items[3].quality).to eq 4
       end
     end
 
