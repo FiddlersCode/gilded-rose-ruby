@@ -20,15 +20,15 @@ describe 'aged_brie' do
     expect(brie.quality).to eq 2
   end
 
-  it 'can be added to bries array' do
-    gilded_rose.add_item(brie)
+  it 'can be added to products array' do
+    gilded_rose.add_product(brie)
     expect(gilded_rose.products[0].name).to eq "Smelly cheese"
   end
 
   context 'quality' do
     before :each do
-      gilded_rose.add_item(brie)
-      gilded_rose.add_item(brie2)
+      gilded_rose.add_product(brie)
+      gilded_rose.add_product(brie2)
     end
 
     it 'responds to update_quality' do
@@ -42,7 +42,7 @@ describe 'aged_brie' do
     end
 
     it 'has a max quality of 50' do
-      gilded_rose.add_item(brie3)
+      gilded_rose.add_product(brie3)
       gilded_rose.update_quality
       expect(products[2].quality).to eq 50
     end

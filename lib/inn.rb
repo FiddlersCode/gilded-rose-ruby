@@ -5,7 +5,7 @@ class Inn
     @products = []
   end
 
-  def add_item(product)
+  def add_product(product)
     @products.push(product)
   end
 
