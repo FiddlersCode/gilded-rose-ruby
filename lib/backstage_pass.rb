@@ -1,6 +1,6 @@
 require 'item'
 class BackstagePass < Item
-  def update_product_quality(pass)
+  def update_item_quality(pass)
     if check_10
       @quality += 2
     elsif check_5

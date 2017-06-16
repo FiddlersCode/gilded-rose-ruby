@@ -1,6 +1,6 @@
 require 'item'
 class Product < Item
-  def update_product_quality(item)
+  def update_item_quality(item)
     lower_sell_in
     check_sell_in ? @quality -= 2 : @quality -= 1
     check_quality

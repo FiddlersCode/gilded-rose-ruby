@@ -1,6 +1,6 @@
 require 'item'
 class AgedBrie < Item
-  def update_product_quality(brie)
+  def update_item_quality(brie)
     lower_sell_in(brie)
     if @quality < 50
       @quality += 1
