@@ -1,3 +1,3 @@
-require 'product'
-class Sulfura < Product
+require 'item'
+class Sulfura < Item
 end

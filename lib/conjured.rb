@@ -1,7 +1,7 @@
-require 'product'
-class Conjured < Product
+require 'item'
+class Conjured < Item
 
-  def update_product_quality(conjured)
+  def update_item_quality(conjured)
     lower_quality
     check_quality
     lower_sell_in(conjured)

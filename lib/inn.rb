@@ -1,17 +1,17 @@
 class Inn
-  attr_reader :products
+  attr_reader :items
 
   def initialize
-    @products = []
+    @items = []
   end
 
-  def add_product(product)
-    @products.push(product)
+  def add_item(item)
+    @items.push(item)
   end
 
   def update_quality
-    @products.each do | product |
-      product.update_product_quality(product)
+    @items.each do | item |
+      item.update_item_quality(item)
     end
   end
 

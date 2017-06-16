@@ -3,7 +3,7 @@ require 'sulfura'
 describe 'sulfura'do
   let(:sword) { Sulfura.new("Sulfura", 3, 3) }
   let(:gilded_rose) { Inn.new }
-  let(:products) { gilded_rose.products }
+  let(:items) { gilded_rose.items }
 
   it 'can be created with a name' do
     expect(sword.name).to eq("Sulfura")
@@ -25,9 +25,9 @@ describe 'sulfura'do
     expect { Sulfura.new("Sulfura", 3, -1)}.to raise_error("Minimum quality is 0.")
   end
 
-  it 'can be added to products array' do
-    gilded_rose.add_product(sword)
-    expect(products[0].name).to eq "Sulfura"
+  it 'can be added to items array' do
+    gilded_rose.add_item(sword)
+    expect(items[0].name).to eq "Sulfura"
   end
 
   it 'never decreases in quality' do

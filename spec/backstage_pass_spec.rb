@@ -7,7 +7,7 @@ describe 'backstage_pass' do
   let(:pass4) {BackstagePass.new("Beatles pass4", 0, 10)}
   let(:pass5) { BackstagePass.new("Beatles pass5", 2, 50)}
   let(:gilded_rose) { Inn.new }
-  let(:products) { gilded_rose.products }
+  let(:items) { gilded_rose.items }
 
   context 'creation' do
     it 'can be created with a name' do
@@ -33,42 +33,42 @@ describe 'backstage_pass' do
 
   context 'sell_in' do
     before :each do
-      gilded_rose.add_product(pass)
+      gilded_rose.add_item(pass)
       gilded_rose.update_quality
     end
 
     it 'decreases the sell_in by 1' do
-      expect(products[0].sell_in).to eq 10
+      expect(items[0].sell_in).to eq 10
     end
   end
 
   context 'quality' do
     before :each do
-      gilded_rose.add_product(pass)
-      gilded_rose.add_product(pass2)
-      gilded_rose.add_product(pass3)
-      gilded_rose.add_product(pass4)
-      gilded_rose.add_product(pass5)
+      gilded_rose.add_item(pass)
+      gilded_rose.add_item(pass2)
+      gilded_rose.add_item(pass3)
+      gilded_rose.add_item(pass4)
+      gilded_rose.add_item(pass5)
       gilded_rose.update_quality
     end
     it 'increases in quality by 1 with >10 days before concert' do
-      expect(products[0].quality).to eq 4
+      expect(items[0].quality).to eq 4
     end
 
     it 'increases in quality by 2 with <= 10 days before concert' do
-      expect(products[1].quality).to eq 5
+      expect(items[1].quality).to eq 5
     end
 
     it 'increases in quality by 3 with <= 5 days before concert' do
-      expect(products[2].quality).to eq 6
+      expect(items[2].quality).to eq 6
     end
 
     it 'has 0 quality after concert' do
-      expect(products[3].quality).to eq 0
+      expect(items[3].quality).to eq 0
     end
 
     it 'has a maximum quality of 50' do
-      expect(products[4].quality).to eq 50
+      expect(items[4].quality).to eq 50
     end
   end
 end
