@@ -2,6 +2,7 @@ require 'conjured'
 
 describe 'conjured' do
   let(:rabbit) { Conjured.new("Rabbit", 2, 2)}
+  let(:rabbit2) { Conjured.new("Rabbit2", -1, 8)}
   let(:gilded_rose) { Inn.new }
   let(:products) { gilded_rose.products }
 
@@ -38,11 +39,16 @@ describe 'conjured' do
   context 'quality' do
     before :each do
       gilded_rose.add_product(rabbit)
+      gilded_rose.add_product(rabbit2)
       gilded_rose.update_quality
     end
 
     it 'lowers quality by 2' do
       expect(products[0].quality).to eq 0
+    end
+
+    it 'lowers quality by 4 when sell_in < 0' do
+      expect(products[1].quality).to eq 4
     end
 
     it 'cannot have a negative quality' do
