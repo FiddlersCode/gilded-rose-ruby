@@ -3,6 +3,7 @@ require 'backstage_pass'
 describe 'backstage_pass' do
   let(:pass) { BackstagePass.new("Beatles pass", 11, 3) }
   let(:pass2) { BackstagePass.new("Beatles pass2", 10, 3)}
+  let(:pass3) { BackstagePass.new("Beatles pass3", 5, 3)}
   let(:gilded_rose) { Inn.new }
   let(:products) { gilded_rose.products }
 
@@ -35,22 +36,20 @@ describe 'backstage_pass' do
     before :each do
       gilded_rose.add_product(pass)
       gilded_rose.add_product(pass2)
+      gilded_rose.add_product(pass3)
       gilded_rose.update_quality
     end
     it 'increases in quality by 1 with >10 days before concert' do
-      expect(products[0].name).to eq "Beatles pass"
       expect(products[0].quality).to eq 4
     end
 
     it 'increases in quality by 2 with <= 10 days before concert' do
       expect(products[1].quality).to eq 5
     end
-    #
-    # it 'increases in quality by 3 with <= 5 days before concert' do
-    #   5.times { gilded_rose.update_quality }
-    #   expect(items[3].sell_in).to eq 5
-    #   expect(items[3].quality).to eq 12
-    # end
+
+    it 'increases in quality by 3 with <= 5 days before concert' do
+      expect(products[2].quality).to eq 6
+    end
     #
     # it 'has 0 quality after concert' do
     #   11.times { gilded_rose.update_quality }
