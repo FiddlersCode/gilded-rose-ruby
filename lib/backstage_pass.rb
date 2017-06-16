@@ -19,6 +19,7 @@ class BackstagePass
     else
       @quality +=1
     end
+    @quality = 50 if @quality > 50
     lower_sell_in
   end
 

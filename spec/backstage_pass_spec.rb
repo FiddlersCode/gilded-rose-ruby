@@ -67,7 +67,7 @@ describe 'backstage_pass' do
       expect(products[3].quality).to eq 0
     end
 
-    xit 'has a maximum quality of 50' do
+    it 'has a maximum quality of 50' do
       expect(products[4].quality).to eq 50
     end
   end
