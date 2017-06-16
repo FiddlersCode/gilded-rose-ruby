@@ -24,6 +24,10 @@ describe 'backstage_pass' do
     it 'can be created with a max quality of 50' do
       expect { BackstagePass.new("Pass", 10, 51)}.to raise_error("Max quality is 50.")
     end
+
+    it 'can be created with a minimum quality of 0' do
+      expect { BackstagePass.new("Pass", 10, -1)}.to raise_error("Minimum quality is 0.")
+    end
   end
 
   context 'sell_in' do
