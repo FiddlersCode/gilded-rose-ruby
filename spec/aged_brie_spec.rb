@@ -8,21 +8,31 @@ describe 'aged_brie' do
   let(:gilded_rose) { Inn.new }
   let(:products) { gilded_rose.products }
 
-  it 'can be created with a name' do
-    expect(brie.name).to eq ("Smelly cheese")
-  end
+  context 'creation' do
+    it 'can be created with a name' do
+      expect(brie.name).to eq ("Smelly cheese")
+    end
 
-  it 'can be created with sell_in' do
-    expect(brie.sell_in).to eq 4
-  end
+    it 'can be created with sell_in' do
+      expect(brie.sell_in).to eq 4
+    end
 
-  it 'can be created with quality' do
-    expect(brie.quality).to eq 2
-  end
+    it 'can be created with quality' do
+      expect(brie.quality).to eq 2
+    end
 
-  it 'can be added to products array' do
-    gilded_rose.add_product(brie)
-    expect(gilded_rose.products[0].name).to eq "Smelly cheese"
+    it 'can be added to products array' do
+      gilded_rose.add_product(brie)
+      expect(gilded_rose.products[0].name).to eq "Smelly cheese"
+    end
+
+    it 'can be instantiated with a max quality of 50' do
+      expect {AgedBrie.new("Smelly", 10, 51)}.to raise_error "Max quality is 50."
+    end
+
+    it 'can be instantiated with a minimum quality of 0' do
+      expect {AgedBrie.new("Smelly", 1, -5)}.to raise_error "Minimum quality is 0."
+    end
   end
 
   context 'sell_in' do
