@@ -2,7 +2,9 @@
 by Paula Muldoon (Makers Academy remote April 2017 cohort)
 
 ### About
-I spent one day working on refactoring this legacy code.
+I spent two days working on refactoring this legacy code.  I used duck typing and inheritance to refactor the nested if/else conditionals to make a clean and easily extensible program.
+
+### The Brief
 
 *"Hi and welcome to team Gilded Rose. As you know, we are a small inn with a prime location in a prominent city run by a friendly innkeeper named Allison. We also buy and sell only the finest goods. Unfortunately, our goods are constantly degrading in quality as they approach their sell by date.
 
