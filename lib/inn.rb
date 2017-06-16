@@ -1,5 +1,5 @@
 class Inn
-  attr_reader :products, :quality
+  attr_reader :products
 
   def initialize
     @products = []

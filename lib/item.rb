@@ -7,7 +7,17 @@ class Item
     @quality = quality
   end
 
+  def update_product_quality(item)
+    lower_sell_in
+  end
+
   def to_s()
     "#{@name}, #{@sell_in}, #{@quality}"
+  end
+
+  private
+
+  def lower_sell_in
+    @sell_in -= 1
   end
 end

@@ -22,6 +22,13 @@ describe 'item' do
     expect(products[0].name).to eq "pen"
   end
 
+  context 'sell_in' do
+    it 'decreases sell_in by 1' do
+      gilded_rose.add_product(item)
+      gilded_rose.update_quality
+      expect(products[0].sell_in).to eq 1
+    end
+  end
 
 
 end
