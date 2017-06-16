@@ -18,11 +18,16 @@ describe 'item' do
       expect(item.quality).to eq 2
     end
 
+    it 'item can be created with a max quality of 50' do
+      expect{Item.new("Horse", 2, 51)}.to raise_error("Max quality is 50.")
+    end
+
     it 'can be added to products array' do
       gilded_rose.add_product(item)
       expect(products[0].name).to eq "pen"
     end
   end
+
 
   context 'sell_in' do
     it 'decreases sell_in by 1' do
