@@ -1,13 +1,5 @@
-class Item
-  attr_accessor :name, :sell_in, :quality
-
-  def initialize(name, sell_in, quality)
-    @name = name
-    @sell_in = sell_in
-    @quality = quality
-    errors
-  end
-
+require 'product'
+class Item < Product
   def update_product_quality(item)
     lower_sell_in
     check_sell_in ? @quality -= 2 : @quality -= 1

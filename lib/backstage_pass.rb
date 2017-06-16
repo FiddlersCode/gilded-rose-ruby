@@ -1,13 +1,5 @@
-class BackstagePass
-  attr_reader :name, :sell_in, :quality
-
-  def initialize(name, sell_in, quality)
-    @name = name
-    @sell_in = sell_in
-    @quality = quality
-    errors
-  end
-
+require 'product'
+class BackstagePass < Product
   def update_product_quality(pass)
     if check_10
       @quality += 2
