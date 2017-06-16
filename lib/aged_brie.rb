@@ -11,5 +11,11 @@ class AgedBrie
     if @quality < 50
       @quality += 1
     end
+    change_sell_in(brie)
+  end
+
+  private
+  def change_sell_in(brie)
+    @sell_in -= 1
   end
 end

@@ -25,14 +25,21 @@ describe 'aged_brie' do
     expect(gilded_rose.products[0].name).to eq "Smelly cheese"
   end
 
+  context 'sell_in' do
+    before :each do
+      gilded_rose.add_product(brie)
+    end
+
+    it 'decreases the sell_in date by 1' do
+      gilded_rose.update_quality
+      expect(brie.sell_in).to eq 3
+    end
+  end
+
   context 'quality' do
     before :each do
       gilded_rose.add_product(brie)
       gilded_rose.add_product(brie2)
-    end
-
-    it 'responds to update_quality' do
-      expect(gilded_rose).to respond_to(:update_quality)
     end
 
     it 'aged brie increases in quality with age' do
