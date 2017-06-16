@@ -12,10 +12,11 @@ class BackstagePass
       @quality += 2
     elsif check_5
       @quality += 3
+    elsif check_finished
+      @quality = 0
     else
       @quality +=1
     end
-
     lower_sell_in
   end
 
@@ -29,6 +30,10 @@ class BackstagePass
   end
 
   def check_5
-    true if @sell_in >= 0 && @sell_in < 6
+    true if @sell_in > 0 && @sell_in < 6
+  end
+
+  def check_finished
+    true if @sell_in < 1
   end
 end
