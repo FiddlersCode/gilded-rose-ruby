@@ -8,6 +8,11 @@ class Conjured
   end
 
   def update_product_quality(conjured)
+    lower_sell_in(conjured)
+  end
+
+  private
+  def lower_sell_in(conjured)
     @sell_in -= 1
   end
 end
