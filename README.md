@@ -41,7 +41,7 @@ Clone the repo. Then:
 bundle install
 
 ```
-#### To run the tests
+## To run the tests
 ```bash
 rspec
 ```
@@ -52,10 +52,11 @@ rspec
 ---
 ## Processes
 * TDD
-  See the [spreadsheet of tests](https://docs.google.com/spreadsheets/d/19mLGUjQzX0oeU_oTM6jcynBZSezARSlNLIVN_is0EJ4/edit?usp=sharing)
+
+See the [spreadsheet of tests](https://docs.google.com/spreadsheets/d/19mLGUjQzX0oeU_oTM6jcynBZSezARSlNLIVN_is0EJ4/edit?usp=sharing)
 
 ---
-## Technologies used
+## Technologies used
 
 * [Ruby 2.4.0](https://www.ruby-lang.org/en/)
 * [RSpec](http://rspec.info/)
