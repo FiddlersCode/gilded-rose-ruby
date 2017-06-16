@@ -23,6 +23,10 @@ describe 'item' do
       expect{Item.new("Horse", 2, 51)}.to raise_error("Max quality is 50.")
     end
 
+    it 'item can be created with a min quality of 0' do
+      expect{ Item.new("Cow", 2, -1)}.to raise_error("Minimum quality is 0.")
+    end
+
     it 'can be added to products array' do
       gilded_rose.add_product(item)
       expect(products[0].name).to eq "pen"
