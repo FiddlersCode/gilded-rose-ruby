@@ -8,12 +8,16 @@ class BackstagePass
   end
 
   def update_product_quality(pass)
+    check_10 ? @quality += 2 : @quality += 1
     lower_sell_in
-    @quality += 1
   end
 
   private
   def lower_sell_in
     @sell_in -= 1
+  end
+
+  def check_10
+    true if @sell_in < 11
   end
 end
