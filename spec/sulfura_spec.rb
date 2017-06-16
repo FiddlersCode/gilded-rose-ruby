@@ -17,6 +17,14 @@ describe 'sulfura'do
     expect(sword.quality).to eq 3
   end
 
+  it 'can be instantiated with a max quality of 50' do
+    expect {Sulfura.new("Sulfura", 3, 51)}.to raise_error("Max quality is 50.")
+  end
+
+  it 'can be instantiated with a minimu quality of 0' do
+    expect { Sulfura.new("Sulfura", 3, -1)}.to raise_error("Minimum quality is 0.")
+  end
+
   it 'can be added to products array' do
     gilded_rose.add_product(sword)
     expect(products[0].name).to eq "Sulfura"
