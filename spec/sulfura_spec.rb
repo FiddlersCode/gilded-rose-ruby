@@ -21,4 +21,9 @@ describe 'sulfura'do
     gilded_rose.add_product(sword)
     expect(products[0].name).to eq "Sulfura"
   end
+
+  it 'never decreases in quality' do
+    gilded_rose.update_quality
+    expect(sword.quality).to eq 3
+  end
 end
