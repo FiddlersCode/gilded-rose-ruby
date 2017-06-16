@@ -17,6 +17,22 @@ describe 'conjured' do
     it 'conjured can be created with quality' do
       expect(rabbit.quality).to eq 2
     end
+
+    it 'can be added to the products array' do
+      gilded_rose.add_product(rabbit)
+      expect(products[0].name).to eq 'Rabbit'
+    end
+  end
+
+  context 'sell_in' do
+    before :each do
+      gilded_rose.add_product(rabbit)
+      gilded_rose.update_quality
+    end
+
+    it 'lowers sell_in by 1' do
+      expect(rabbit.sell_in).to eq 1
+    end
   end
 
 
