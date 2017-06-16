@@ -9,6 +9,7 @@ class BackstagePass
 
   def update_product_quality(pass)
     lower_sell_in
+    @quality += 1
   end
 
   private
