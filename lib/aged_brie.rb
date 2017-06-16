@@ -5,10 +5,9 @@ class AgedBrie
     @name = name
     @sell_in = sell_in
     @quality = quality
-    @bries = []
   end
 
-  def update_quality(bries)
-    @bries = bries
+  def update_product_quality(brie)
+    brie.quality += 1
   end
 end

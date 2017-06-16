@@ -8,22 +8,22 @@ require 'simplecov'
 describe Inn do
   let(:item) { Item.new("foo", 2, 6)}
   let(:products) { [] }
-  let(:gilded_rose) { Inn.new(products) }
+  let(:gilded_rose) { Inn.new }
   let(:brie) { Item.new("Aged Brie", 2, 0)}
   let(:sulfuras) { Item.new("Sulfuras, Hand of Ragnaros", 1, 5)}
   let(:pass) { Item.new("Backstage passes to a TAFKAL80ETC concert", 11, 1)}
 
 
 
-  describe "#update_quality" do
-    before :each do
-      products.push(item, brie, sulfuras, pass)
-      gilded_rose.update_quality(item)
-    end
-
-    it 'responds to the method update_quality' do
-      expect(gilded_rose).to respond_to(:update_quality)
-    end
+  describe "#update_all_quality" do
+    # before :each do
+    #   products.push(item, brie, sulfuras, pass)
+    #   gilded_rose.update_quality(item)
+    # end
+    #
+    # it 'responds to the method update_quality' do
+    #   expect(gilded_rose).to respond_to(:update_quality)
+    # end
 
     # it "does not change the name" do
     #   expect(items[0].name).to eq "foo"
