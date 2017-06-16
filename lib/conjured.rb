@@ -1,5 +1,5 @@
-require 'product'
-class Conjured < Product
+require 'item'
+class Conjured < Item
 
   def update_product_quality(conjured)
     lower_quality

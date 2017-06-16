@@ -1,5 +1,5 @@
-require 'product'
-class AgedBrie < Product
+require 'item'
+class AgedBrie < Item
   def update_product_quality(brie)
     lower_sell_in(brie)
     if @quality < 50
@@ -11,5 +11,4 @@ class AgedBrie < Product
   def lower_sell_in(brie)
     @sell_in -= 1
   end
-
 end

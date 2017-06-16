@@ -1,5 +1,5 @@
-require 'product'
-class BackstagePass < Product
+require 'item'
+class BackstagePass < Item
   def update_product_quality(pass)
     if check_10
       @quality += 2

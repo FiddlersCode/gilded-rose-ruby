@@ -25,14 +25,6 @@ describe 'aged_brie' do
       gilded_rose.add_product(brie)
       expect(gilded_rose.products[0].name).to eq "Smelly cheese"
     end
-
-    it 'can be instantiated with a max quality of 50' do
-      expect {AgedBrie.new("Smelly", 10, 51)}.to raise_error "Max quality is 50."
-    end
-
-    it 'can be instantiated with a minimum quality of 0' do
-      expect {AgedBrie.new("Smelly", 1, -5)}.to raise_error "Minimum quality is 0."
-    end
   end
 
   context 'sell_in' do

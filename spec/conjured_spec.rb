@@ -23,14 +23,6 @@ describe 'conjured' do
       gilded_rose.add_product(rabbit)
       expect(products[0].name).to eq 'Rabbit'
     end
-
-    it 'can be instantiated with a max quality of 50' do
-      expect { Conjured.new("Rabbit", 10, 51)}.to raise_error "Max quality is 50."
-    end
-
-    it 'has a minimum quality of 0 upon instantiation' do
-      expect { Conjured.new("Rabbit", 1, -12)}.to raise_error "Minimum quality is 0."
-    end
   end
 
   context 'sell_in' do
