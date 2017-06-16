@@ -35,5 +35,16 @@ describe 'conjured' do
     end
   end
 
+  context 'quality' do
+    before :each do
+      gilded_rose.add_product(rabbit)
+      gilded_rose.update_quality
+    end
+
+    it 'lowers quality by 2' do
+      expect(products[0].quality).to eq 0
+    end
+  end
+
 
 end
