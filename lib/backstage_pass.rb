@@ -5,8 +5,7 @@ class BackstagePass
     @name = name
     @sell_in = sell_in
     @quality = quality
-    raise "Max quality is 50." if @quality > 50
-    raise "Minimum quality is 0." if @quality < 0
+    errors
   end
 
   def update_product_quality(pass)
@@ -38,5 +37,11 @@ class BackstagePass
 
   def check_finished
     true if @sell_in < 1
+  end
+
+  def errors
+    raise "Minimum sell_in is 0." if @sell_in < 0
+    raise "Max quality is 50." if @quality > 50
+    raise "Minimum quality is 0." if @quality < 0
   end
 end

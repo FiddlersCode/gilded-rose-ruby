@@ -18,6 +18,10 @@ describe 'backstage_pass' do
       expect(pass.sell_in).to eq 11
     end
 
+    it 'can be created with a minimum sell_in' do
+      expect{BackstagePass.new("Pass", -1, 5)}.to raise_error "Minimum sell_in is 0."
+    end
+
     it 'can be created with a quality' do
       expect(pass.quality).to eq 3
     end
