@@ -5,8 +5,7 @@ class Item
     @name = name
     @sell_in = sell_in
     @quality = quality
-    raise "Max quality is 50." if @quality > 50
-    raise "Minimum quality is 0." if @quality < 0
+    errors
   end
 
   def update_product_quality(item)
@@ -31,5 +30,10 @@ class Item
 
   def check_quality
     @quality = 0 if @quality < 0
+  end
+
+  def errors
+    raise "Max quality is 50." if @quality > 50
+    raise "Minimum quality is 0." if @quality < 0
   end
 end
