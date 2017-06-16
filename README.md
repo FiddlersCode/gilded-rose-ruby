@@ -4,6 +4,8 @@ by Paula Muldoon (Makers Academy remote April 2017 cohort)
 ### About
 I spent two days working on refactoring this legacy code.  I used duck typing and inheritance to refactor the nested if/else conditionals to make a clean and easily extensible program.
 
+Note: in the master branch, my preferred solution changes the `Item` class slightly, to catch errors upon instantiation.  However, this branch keeps the `Item` class intact, to placate the goblin (see below).  I strongly recommend using the code in the master branch.
+
 ### The Brief
 
 *"Hi and welcome to team Gilded Rose. As you know, we are a small inn with a prime location in a prominent city run by a friendly innkeeper named Allison. We also buy and sell only the finest goods. Unfortunately, our goods are constantly degrading in quality as they approach their sell by date.
@@ -29,9 +31,6 @@ We have recently signed a supplier of conjured items. This requires an update to
 
 Feel free to make any changes to the UpdateQuality method and add any new code as long as everything still works correctly. However, do not alter the Item class or Items property as those belong to the goblin in the corner who will insta-rage and one-shot you as he doesn’t believe in shared code ownership (you can make the UpdateQuality method and Items property static if you like, we’ll cover for you)."*
 
-Note: in my solution, I decided to edit the Items class. This situation was shouting out to use duck types, and by altering the Item class, the code has become easily extensible (was a cakewalk ) and very clear.  I could have left the Item class completely alone, stopped using it, and created a new class called Products, but this seemed redundant.  I trust that the goblin will see the value of good object-oriented design.
-
-For a further discussion, please see Sandi Metz's [POODR](http://www.poodr.com/), chapter 5, "Reducing Costs with Duck Typing."
 ---
 
 ## Run locally
