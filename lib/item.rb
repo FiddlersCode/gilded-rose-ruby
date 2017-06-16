@@ -9,7 +9,7 @@ class Item
 
   def update_product_quality(item)
     lower_sell_in
-    @quality -= 1
+    check_sell_in ? @quality -= 2 : @quality -= 1
   end
 
   def to_s()
@@ -20,5 +20,9 @@ class Item
 
   def lower_sell_in
     @sell_in -= 1
+  end
+
+  def check_sell_in
+    true if sell_in < 0
   end
 end
