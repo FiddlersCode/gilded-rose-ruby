@@ -44,6 +44,11 @@ describe 'conjured' do
     it 'lowers quality by 2' do
       expect(products[0].quality).to eq 0
     end
+
+    it 'cannot have a negative quality' do
+      gilded_rose.update_quality
+      expect(products[0].quality).to eq 0
+    end
   end
 
 

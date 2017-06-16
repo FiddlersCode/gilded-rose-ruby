@@ -9,11 +9,16 @@ class Conjured
 
   def update_product_quality(conjured)
     @quality -= 2
+    check_quality
     lower_sell_in(conjured)
   end
 
   private
   def lower_sell_in(conjured)
     @sell_in -= 1
+  end
+
+  def check_quality
+    @quality = 0 if @quality < 0
   end
 end
