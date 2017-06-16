@@ -8,6 +8,8 @@ class AgedBrie
   end
 
   def update_product_quality(brie)
-    @quality += 1
+    if @quality < 50
+      @quality += 1
+    end
   end
 end

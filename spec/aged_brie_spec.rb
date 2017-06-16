@@ -4,6 +4,7 @@ require 'inn'
 describe 'aged_brie' do
   let(:brie) { AgedBrie.new("Smelly cheese", 4, 2) }
   let(:brie2) { AgedBrie.new("Smellier cheese", 4, 2)}
+  let(:brie3) { AgedBrie.new("Smelliest cheese", 4, 50)}
   let(:gilded_rose) { Inn.new }
   let(:products) { gilded_rose.products }
 
@@ -37,6 +38,13 @@ describe 'aged_brie' do
     it 'aged brie increases in quality with age' do
       gilded_rose.update_quality
       expect(products[0].quality).to eq 3
+      expect(products[1].quality).to eq 3
+    end
+
+    it 'has a max quality of 50' do
+      gilded_rose.add_item(brie3)
+      gilded_rose.update_quality
+      expect(products[2].quality).to eq 50
     end
   end
 end
