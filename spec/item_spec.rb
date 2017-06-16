@@ -30,5 +30,15 @@ describe 'item' do
     end
   end
 
+  context 'quality' do
+    before :each do
+      gilded_rose.add_product(item)
+      gilded_rose.update_quality
+    end
+
+    it 'decreases the quality by 1' do
+      expect(products[0].quality).to eq 1
+    end
+  end
 
 end

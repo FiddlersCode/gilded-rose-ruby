@@ -9,6 +9,7 @@ class Item
 
   def update_product_quality(item)
     lower_sell_in
+    @quality -= 1
   end
 
   def to_s()
