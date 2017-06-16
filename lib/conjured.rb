@@ -5,6 +5,7 @@ class Conjured
     @name = name
     @sell_in = sell_in
     @quality = quality
+    raise "Max quality is 50." if @quality > 50
   end
 
   def update_product_quality(conjured)
