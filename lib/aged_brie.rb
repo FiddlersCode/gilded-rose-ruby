@@ -8,6 +8,6 @@ class AgedBrie
   end
 
   def update_product_quality(brie)
-    brie.quality += 1
+    @quality += 1
   end
 end

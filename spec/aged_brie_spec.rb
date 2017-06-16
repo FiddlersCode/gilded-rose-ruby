@@ -5,7 +5,7 @@ describe 'aged_brie' do
   let(:brie) { AgedBrie.new("Smelly cheese", 4, 2) }
   let(:brie2) { AgedBrie.new("Smellier cheese", 4, 2)}
   let(:gilded_rose) { Inn.new }
-  let(:bries) { gilded_rose.bries }
+  let(:products) { gilded_rose.products }
 
   it 'can be created with a name' do
     expect(brie.name).to eq ("Smelly cheese")
@@ -34,10 +34,9 @@ describe 'aged_brie' do
       expect(gilded_rose).to respond_to(:update_quality)
     end
 
-    xit 'aged brie increases in quality with age' do
-      p bries
-      gilded_rose.update_quality(bries)
-      expect(bries[0].quality).to eq 1
+    it 'aged brie increases in quality with age' do
+      gilded_rose.update_quality
+      expect(products[0].quality).to eq 3
     end
   end
 end

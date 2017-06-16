@@ -1,17 +1,17 @@
 class Inn
-  attr_reader :bries, :products
+  attr_reader :products, :quality
 
   def initialize
     @products = []
   end
 
-  def add_item(item)
-    @products.push(item)
+  def add_item(product)
+    @products.push(product)
   end
 
-  def update_quality(products)
-    products.each do | item |
-      item.update_product_quality(self)
+  def update_quality
+    @products.each do | product |
+      product.update_product_quality(product)
     end
   end
 
