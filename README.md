@@ -4,7 +4,7 @@ by Paula Muldoon (Makers Academy remote April 2017 cohort)
 ### About
 I spent two days working on refactoring this legacy code.  I used duck typing and inheritance to refactor the nested if/else conditionals to make a clean and easily extensible program.
 
-Note: in the master branch, my preferred solution changes the `Item` class slightly, to catch errors upon instantiation.  However, this branch keeps the `Item` class intact, to placate the goblin (see below).  I strongly recommend using the code in the master branch.
+Note: in the master branch, my preferred solution changes the `Item` class slightly, to catch errors upon instantiation.  However, this branch keeps the `Item` class intact, to placate the goblin (see below).  Nevertheless, I strongly recommend using the code in the [master branch](https://github.com/pmuldoon86/gilded-rose-ruby).
 
 ### The Brief
 
