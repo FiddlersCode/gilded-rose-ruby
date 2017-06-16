@@ -2,6 +2,7 @@ require 'item'
 
 describe 'item' do
   let(:item) { Item.new("pen", 2, 2) }
+  let(:item2) { Item.new("horse", 0, 20)}
   let(:gilded_rose) { Inn.new }
   let(:products) { gilded_rose.products}
 
@@ -40,11 +41,16 @@ describe 'item' do
   context 'quality' do
     before :each do
       gilded_rose.add_product(item)
+      gilded_rose.add_product(item2)
       gilded_rose.update_quality
     end
 
     it 'decreases the quality by 1' do
       expect(products[0].quality).to eq 1
+    end
+
+    it 'quality decreases 2x when sell_in < 0' do
+      expect(products[1].quality).to eq 18
     end
 
     it 'cannot have a negative quality' do
