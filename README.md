@@ -4,7 +4,7 @@ by Paula Muldoon (Makers Academy remote April 2017 cohort)
 ### About
 I spent two days working on refactoring this legacy code.  I used duck typing and inheritance to refactor the nested if/else conditionals to make a clean and easily extensible program.
 
-Note: in my solution, I decided to edit the `Item` class slightly, to catch errors upon instantation and also to remove the attr_accessor.  However, the [`item-class` branch](https://github.com/pmuldoon86/gilded-rose-ruby/tree/item-class) has the solution with the `Item` class intact, as per the goblin's instructions below.
+Note: in my solution, I decided to edit the `Item` class slightly, to catch errors upon instantation and also to remove the attr_accessor.  However, the [`item-class` branch](https://github.com/pmuldoon86/gilded-rose-ruby/tree/item-class) has the solution with the `Item` class intact, as per the goblin's instructions below.  The `Sulfura` class has been removed in master branch, as it is redundant (all necessary behaviour is contained within the superclass `Item`).
 
 For further information on duck typing, please see Sandi Metz's [POODR](http://www.poodr.com/), chapter 5, "Reducing Costs with Duck Typing."
 
