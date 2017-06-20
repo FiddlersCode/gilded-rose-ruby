@@ -11,7 +11,7 @@ class Inn
 
   def update_quality
     @items.each do | item |
-      item.update_item_quality(item)
+      item.update_item_quality
     end
   end
 

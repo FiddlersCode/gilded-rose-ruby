@@ -1,14 +1,14 @@
 require 'item'
 class Conjured < Item
 
-  def update_item_quality(conjured)
+  def update_item_quality
     lower_quality
     check_quality
-    lower_sell_in(conjured)
+    lower_sell_in
   end
 
   private
-  def lower_sell_in(conjured)
+  def lower_sell_in
     @sell_in -= 1
   end
 
