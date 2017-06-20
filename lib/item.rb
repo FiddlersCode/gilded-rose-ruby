@@ -13,4 +13,8 @@ class Item
     raise "Max quality is 50." if @quality > 50
     raise "Minimum quality is 0." if @quality < 0
   end
+
+  def lower_sell_in
+    @sell_in -= 1
+  end
 end

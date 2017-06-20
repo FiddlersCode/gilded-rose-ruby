@@ -11,11 +11,6 @@ class Product < Item
   end
 
   private
-
-  def lower_sell_in
-    @sell_in -= 1
-  end
-
   def check_sell_in
     true if sell_in < 0
   end

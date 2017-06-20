@@ -8,10 +8,6 @@ class Conjured < Item
   end
 
   private
-  def lower_sell_in
-    @sell_in -= 1
-  end
-
   def lower_quality
     @sell_in < 0 ? @quality -= 4 : @quality -=2
   end

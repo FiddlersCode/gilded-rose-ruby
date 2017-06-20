@@ -15,10 +15,6 @@ class BackstagePass < Item
   end
 
   private
-  def lower_sell_in
-    @sell_in -= 1
-  end
-
   def check_10
     true if @sell_in > 5 && @sell_in < 11
   end
